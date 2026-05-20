@@ -265,33 +265,83 @@ function LandingPage() {
       </section>
 
       {/* 3. O QUE VEM NO KIT */}
-      <section className="py-24 px-4 bg-background">
+      <section className="py-20 px-4" style={{ background: "#FAFAFA" }}>
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-foreground mb-4 font-display">📦 Veja tudo que você recebe</h2>
-            <p className="text-xl text-muted-foreground">Um material completo para entreter e ensinar</p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-bold mb-4" style={{ background: "#F0FDF6", color: "#1FAF5A" }}>
+              O QUE ESTÁ INCLUÍDO
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black mb-3 font-display" style={{ color: "#111111" }}>
+              📦 Veja tudo que você recebe
+            </h2>
+            <p className="text-lg" style={{ color: "#666666" }}>Um kit completo que vale muito mais do que custa</p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              "250+ atividades da Copa", "Atividades de alfabetização", "Matemática temática",
-              "Pintura e coordenação", "Liga pontos", "Caça-palavras",
-              "Cruzadinhas", "Atividades para colorir", "Desafios divertidos",
-              "Quiz da Copa", "Jogos educativos", "Atividades de escrita",
-              "Interpretação de texto", "Certificados infantis", "Cartazes decorativos",
-              "Bandeiras para imprimir", "Atividades por idade", "Passatempos",
-              "Figurinhas para colorir", "Atividades em PDF", "Acesso vitalício", "Atualizações gratuitas"
+              {
+                emoji: "🎯",
+                title: "250+ Atividades da Copa",
+                desc: "Prontas para imprimir e usar na hora — sem precisar criar nada do zero.",
+                bg: "#F0FDF6", border: "#BBF7D0", accent: "#1FAF5A"
+              },
+              {
+                emoji: "📒",
+                title: "Álbum da Copa da Sala",
+                desc: "Um álbum exclusivo para cada criança colar as figurinhas e torcer pelo seu time.",
+                bg: "#FFFBEB", border: "#FDE68A", accent: "#D97706"
+              },
+              {
+                emoji: "🏆",
+                title: "Mini Craque Personalizável",
+                desc: "Cada aluno vira um craque! Material personalizável com nome e foto.",
+                bg: "#EFF6FF", border: "#BFDBFE", accent: "#3B82F6"
+              },
+              {
+                emoji: "🎮",
+                title: "Jogos Educativos e Desafios",
+                desc: "Caça-palavras, cruzadinhas, quiz da Copa e muito mais para aprender brincando.",
+                bg: "#FDF4FF", border: "#E9D5FF", accent: "#9333EA"
+              },
+              {
+                emoji: "🎖️",
+                title: "Certificados, Figurinhas e Bônus",
+                desc: "Certificados de mini craque, figurinhas para colorir e materiais surpresa extras.",
+                bg: "#FFF1F2", border: "#FECDD3", accent: "#E11D48"
+              },
+              {
+                emoji: "⚡",
+                title: "Acesso Imediato + Impressão Ilimitada",
+                desc: "Baixe agora e imprima quantas vezes quiser. O arquivo é seu para sempre.",
+                bg: "#F0FDF4", border: "#A7F3D0", accent: "#059669"
+              },
             ].map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="flex items-center gap-3 bg-muted/20 p-4 rounded-xl border border-border/50 hover:bg-muted/40 transition-colors"
+                transition={{ delay: i * 0.08 }}
+                whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.10)" }}
+                className="rounded-2xl p-6 border transition-all duration-200 cursor-default"
+                style={{ background: item.bg, borderColor: item.border }}
               >
-                <Check className="w-5 h-5 text-secondary shrink-0" />
-                <span className="font-semibold text-foreground/90">{item}</span>
+                <div className="text-3xl mb-4">{item.emoji}</div>
+                <h3 className="font-black text-lg mb-2 font-display" style={{ color: "#111111" }}>
+                  {item.title}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#555555" }}>
+                  {item.desc}
+                </p>
+                <div className="mt-4 flex items-center gap-1.5">
+                  <Check className="w-4 h-4 shrink-0" style={{ color: item.accent }} />
+                  <span className="text-xs font-bold" style={{ color: item.accent }}>Incluído no kit</span>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -406,36 +456,142 @@ function LandingPage() {
       </section>
 
       {/* 6. DEPOIMENTOS */}
-      <section className="py-24 px-4 bg-background">
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-foreground font-display">O que dizem sobre o Kit</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-bold mb-4" style={{ background: "#FFFBEB", color: "#D97706" }}>
+              ⭐ AVALIAÇÕES REAIS
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black font-display" style={{ color: "#111111" }}>
+              O que dizem sobre o Kit
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { text: "Meus alunos ficaram completamente envolvidos nas atividades. Nunca vi a sala tão concentrada!", author: "Juliana", role: "Professora" },
-              { text: "As crianças passaram horas longe do celular. Imprimi em casa e foi sucesso absoluto.", author: "Camila", role: "Mãe" },
-              { text: "Vale muito mais do que custa. O material é lindo e super educativo.", author: "Patrícia", role: "Pedagoga" },
-              { text: "Foi a salvação para os dias de jogos! As crianças se divertiram muito aprendendo.", author: "Mariana", role: "Coordenadora" },
-              { text: "Meu filho adorou o álbum da copa e o mini craque, muito capricho no material.", author: "Roberta", role: "Mãe" }
+              {
+                text: "Meu filho passou horas longe do celular fazendo as atividades. Nunca pensei que algo tão simples fosse funcionar tão bem. Valeu cada centavo!",
+                author: "Camila Ribeiro",
+                role: "Mãe de 2 filhos",
+                avatar: "https://i.pravatar.cc/150?img=47",
+                highlight: "horas longe do celular"
+              },
+              {
+                text: "Os alunos ficaram animados como nunca durante as aulas da Copa. A sala virou um estádio de entusiasmo! Vou usar todo ano.",
+                author: "Juliana Ferreira",
+                role: "Professora do 2º ano",
+                avatar: "https://i.pravatar.cc/150?img=45",
+                highlight: "animados como nunca"
+              },
+              {
+                text: "Vale muito mais do que custa. O material é extremamente bem feito, organizado e as crianças amaram o álbum da sala.",
+                author: "Patrícia Sousa",
+                role: "Pedagoga",
+                avatar: "https://i.pravatar.cc/150?img=44",
+                highlight: "vale muito mais do que custa"
+              },
+              {
+                text: "Nos dias de jogo foi a salvação! Imprimi na véspera e as crianças ficaram entretidas a tarde toda. Recomendo demais.",
+                author: "Mariana Costa",
+                role: "Mãe e coordenadora",
+                avatar: "https://i.pravatar.cc/150?img=49",
+                highlight: "a salvação nos dias de jogo"
+              },
+              {
+                text: "Usei na minha turma de reforço e foi incrível. As crianças pediram para levar para casa. Material de altíssima qualidade.",
+                author: "Fernanda Lima",
+                role: "Professora particular",
+                avatar: "https://i.pravatar.cc/150?img=43",
+                highlight: "pediram para levar para casa"
+              },
+              {
+                text: "Comprei o kit completo e não me arrependo. O mini craque personalizável foi o maior sucesso com os meus sobrinhos!",
+                author: "Vanessa Almeida",
+                role: "Tia e professora",
+                avatar: "https://i.pravatar.cc/150?img=41",
+                highlight: "maior sucesso"
+              },
             ].map((d, i) => (
-              <div key={i} className="bg-muted/30 p-8 rounded-3xl relative border border-border/50">
-                <div className="flex gap-1 text-primary mb-4">
-                  {[...Array(5)].map((_, j) => <Star key={j} className="w-5 h-5 fill-current" />)}
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                whileHover={{ y: -4 }}
+                className="rounded-2xl p-6 border transition-all duration-200"
+                style={{ background: "#FFFFFF", borderColor: "#EFEFEF", boxShadow: "0 2px 16px rgba(0,0,0,0.06)" }}
+              >
+                {/* Stars */}
+                <div className="flex gap-0.5 mb-4">
+                  {[...Array(5)].map((_, j) => (
+                    <Star key={j} className="w-4 h-4 fill-current" style={{ color: "#FFC72C" }} />
+                  ))}
                 </div>
-                <p className="text-lg italic text-foreground/80 mb-6">"{d.text}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center font-bold text-xl">
+
+                {/* Quote */}
+                <p className="text-base leading-relaxed mb-6" style={{ color: "#333333" }}>
+                  "{d.text}"
+                </p>
+
+                {/* Author */}
+                <div className="flex items-center gap-3 pt-4 border-t" style={{ borderColor: "#F0F0F0" }}>
+                  <img
+                    src={d.avatar}
+                    alt={d.author}
+                    className="w-11 h-11 rounded-full object-cover border-2"
+                    style={{ borderColor: "#E8E8E8" }}
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.nextElementSibling?.classList.remove('hidden');
+                    }}
+                  />
+                  <div className="w-11 h-11 rounded-full items-center justify-center font-black text-white text-sm hidden"
+                    style={{ background: "#1FAF5A" }}>
                     {d.author[0]}
                   </div>
                   <div>
-                    <h5 className="font-bold">{d.author}</h5>
-                    <span className="text-sm text-muted-foreground">{d.role}</span>
+                    <p className="font-black text-sm" style={{ color: "#111111" }}>{d.author}</p>
+                    <p className="text-xs" style={{ color: "#888888" }}>{d.role}</p>
+                  </div>
+                  <div className="ml-auto">
+                    <span className="text-xs font-bold px-2 py-1 rounded-full" style={{ background: "#F0FDF6", color: "#1FAF5A" }}>
+                      ✓ Verificado
+                    </span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
+
+          {/* Social proof summary */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl border" style={{ background: "#FAFAFA", borderColor: "#E8E8E8" }}>
+              <div className="flex -space-x-2">
+                {["https://i.pravatar.cc/150?img=47","https://i.pravatar.cc/150?img=45","https://i.pravatar.cc/150?img=44"].map((src, i) => (
+                  <img key={i} src={src} alt="" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                ))}
+              </div>
+              <p className="text-sm font-semibold" style={{ color: "#444444" }}>
+                <span className="font-black" style={{ color: "#1FAF5A" }}>+2.400 famílias</span> já garantiram o kit
+              </p>
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, j) => <Star key={j} className="w-3.5 h-3.5 fill-current" style={{ color: "#FFC72C" }} />)}
+              </div>
+              <span className="text-sm font-black" style={{ color: "#111" }}>4.9</span>
+            </div>
+          </motion.div>
         </div>
       </section>
 

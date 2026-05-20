@@ -1,0 +1,112 @@
+Reduza a seção “📦 Veja tudo que você recebe” para ficar mais limpa e otimizada para celular.
+
+════════════════════
+OBJETIVO
+════════════════════
+
+A seção atual está muito longa no mobile e prejudica:
+
+* leitura
+* escaneabilidade
+* conversão
+
+Quero uma versão mais estratégica, visual e persuasiva.
+
+════════════════════
+ALTERAÇÕES
+════════════════════
+
+* Diminuir a lista para APENAS 6 tópicos principais
+* Escolher os itens com MAIOR percepção de valor
+* Os benefícios devem gerar:
+
+  * curiosidade
+  * desejo
+  * sensação de kit completo
+  * valor muito acima do preço
+
+════════════════════
+NOVA LISTA
+════════════════════
+
+✓ 250+ atividades da Copa prontas para imprimir
+✓ Álbum da Copa da Sala exclusivo
+✓ Mini Craque personalizável infantil
+✓ Jogos educativos e desafios divertidos
+✓ Certificados, figurinhas e materiais bônus
+✓ Acesso imediato + impressão ilimitada
+
+════════════════════
+ESTILO VISUAL DA SEÇÃO
+════════════════════
+
+* Transformar os tópicos em cards modernos
+* Ícones premium e minimalistas
+* Melhor espaçamento
+* Layout elegante para mobile
+* Visual mais clean e sofisticado
+* Não deixar aparência “poluída”
+
+════════════════════
+DEPOIMENTOS
+════════════════════
+
+Melhore MUITO a seção de depoimentos.
+
+Quero:
+
+* fotos REALISTAS geradas por IA
+* aparência extremamente humana e natural
+* estilo foto de perfil casual
+* mães e professoras brasileiras
+* iluminação natural
+* rostos amigáveis e confiáveis
+* diversidade de pessoas
+
+Cada depoimento deve conter:
+
+* foto
+* nome
+* ocupação
+* estrelas 5/5
+* comentário convincente e emocional
+
+EXEMPLOS:
+
+“Meu filho passou horas longe do celular fazendo as atividades.”
+— Camila, mãe de 2 filhos
+
+“Os alunos ficaram animados como nunca durante as aulas.”
+— Juliana, professora
+
+“Vale muito mais do que custa. Material extremamente bem feito.”
+— Patrícia, pedagoga
+
+════════════════════
+IMPORTANTE
+════════════════════
+
+As fotos NÃO devem parecer:
+
+* banco de imagens
+* IA exagerada
+* modelos perfeitos demais
+
+Quero aparência:
+
+* autêntica
+* confiável
+* humanizada
+* parecida com clientes reais
+
+════════════════════
+EXTRA
+════════════════════
+
+Adicionar animações suaves:
+
+* fade-in nos depoimentos
+* hover elegante nos cards
+* transições modernas
+
+O resultado final deve parecer uma landing page premium de alta conversão.
