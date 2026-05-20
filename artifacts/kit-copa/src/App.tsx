@@ -265,83 +265,32 @@ function LandingPage() {
       </section>
 
       {/* 3. O QUE VEM NO KIT */}
-      <section className="py-20 px-4" style={{ background: "#FAFAFA" }}>
+      <section className="py-24 px-4 bg-background">
         <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-14"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-bold mb-4" style={{ background: "#F0FDF6", color: "#1FAF5A" }}>
-              O QUE ESTÁ INCLUÍDO
-            </span>
-            <h2 className="text-3xl md:text-5xl font-black mb-3 font-display" style={{ color: "#111111" }}>
-              📦 Veja tudo que você recebe
-            </h2>
-            <p className="text-lg" style={{ color: "#666666" }}>Um kit completo que vale muito mais do que custa</p>
-          </motion.div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black text-foreground mb-4 font-display">📦 Veja tudo que você recebe</h2>
+            <p className="text-xl text-muted-foreground">Um material completo para entreter e ensinar</p>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {[
-              {
-                emoji: "🎯",
-                title: "250+ Atividades da Copa",
-                desc: "Prontas para imprimir e usar na hora — sem precisar criar nada do zero.",
-                bg: "#F0FDF6", border: "#BBF7D0", accent: "#1FAF5A"
-              },
-              {
-                emoji: "📒",
-                title: "Álbum da Copa da Sala",
-                desc: "Um álbum exclusivo para cada criança colar as figurinhas e torcer pelo seu time.",
-                bg: "#FFFBEB", border: "#FDE68A", accent: "#D97706"
-              },
-              {
-                emoji: "🏆",
-                title: "Mini Craque Personalizável",
-                desc: "Cada aluno vira um craque! Material personalizável com nome e foto.",
-                bg: "#EFF6FF", border: "#BFDBFE", accent: "#3B82F6"
-              },
-              {
-                emoji: "🎮",
-                title: "Jogos Educativos e Desafios",
-                desc: "Caça-palavras, cruzadinhas, quiz da Copa e muito mais para aprender brincando.",
-                bg: "#FDF4FF", border: "#E9D5FF", accent: "#9333EA"
-              },
-              {
-                emoji: "🎖️",
-                title: "Certificados, Figurinhas e Bônus",
-                desc: "Certificados de mini craque, figurinhas para colorir e materiais surpresa extras.",
-                bg: "#FFF1F2", border: "#FECDD3", accent: "#E11D48"
-              },
-              {
-                emoji: "⚡",
-                title: "Acesso Imediato + Impressão Ilimitada",
-                desc: "Baixe agora e imprima quantas vezes quiser. O arquivo é seu para sempre.",
-                bg: "#F0FDF4", border: "#A7F3D0", accent: "#059669"
-              },
+              "250+ atividades da Copa prontas para imprimir",
+              "Álbum da Copa da Sala exclusivo",
+              "Mini Craque personalizável infantil",
+              "Jogos educativos e desafios divertidos",
+              "Certificados, figurinhas e materiais bônus",
+              "Acesso imediato + impressão ilimitada",
             ].map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.10)" }}
-                className="rounded-2xl p-6 border transition-all duration-200 cursor-default"
-                style={{ background: item.bg, borderColor: item.border }}
+                className="flex items-center gap-3 bg-muted/20 p-4 rounded-xl border border-border/50 hover:bg-muted/40 transition-colors"
               >
-                <div className="text-3xl mb-4">{item.emoji}</div>
-                <h3 className="font-black text-lg mb-2 font-display" style={{ color: "#111111" }}>
-                  {item.title}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#555555" }}>
-                  {item.desc}
-                </p>
-                <div className="mt-4 flex items-center gap-1.5">
-                  <Check className="w-4 h-4 shrink-0" style={{ color: item.accent }} />
-                  <span className="text-xs font-bold" style={{ color: item.accent }}>Incluído no kit</span>
-                </div>
+                <Check className="w-5 h-5 text-secondary shrink-0" />
+                <span className="font-semibold text-foreground/90">{item}</span>
               </motion.div>
             ))}
           </div>
@@ -475,46 +424,40 @@ function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                text: "Meu filho passou horas longe do celular fazendo as atividades. Nunca pensei que algo tão simples fosse funcionar tão bem. Valeu cada centavo!",
-                author: "Camila Ribeiro",
-                role: "Mãe de 2 filhos",
-                avatar: "https://i.pravatar.cc/150?img=47",
-                highlight: "horas longe do celular"
+                text: "Nos dias de jogo foi a salvação! Imprimi na véspera e as crianças ficaram entretidas a tarde toda. Recomendo demais.",
+                author: "Mariana Costa",
+                role: "Mãe e coordenadora",
+                avatar: "https://i.pravatar.cc/150?img=49",
+              },
+              {
+                text: "Imprimi rapidinho e meus alunos amaram kkk. A sala ficou em silêncio total fazendo as atividades. Milagre!",
+                author: "Fernanda Alves",
+                role: "Professora, 1º ano",
+                avatar: "https://i.pravatar.cc/150?img=36",
+              },
+              {
+                text: "Meu filho ficou vidrado nas figurinhas 😂 Tive que imprimir mais duas vezes. Vale muito a pena!",
+                author: "Aline Mendes",
+                role: "Mãe",
+                avatar: "https://i.pravatar.cc/150?img=9",
+              },
+              {
+                text: "Usei na escolinha e foi sucesso total. Os pais ainda me perguntam onde consegui o material. Super indico!",
+                author: "Bruna Tavares",
+                role: "Pedagoga",
+                avatar: "https://i.pravatar.cc/150?img=20",
+              },
+              {
+                text: "Pelo preço achei que seria simples, mas me surpreendeu MUITO. Material lindo, bem organizado e as crianças adoraram.",
+                author: "Carla Rodrigues",
+                role: "Mãe de 3 filhos",
+                avatar: "https://i.pravatar.cc/150?img=32",
               },
               {
                 text: "Os alunos ficaram animados como nunca durante as aulas da Copa. A sala virou um estádio de entusiasmo! Vou usar todo ano.",
                 author: "Juliana Ferreira",
                 role: "Professora do 2º ano",
-                avatar: "https://i.pravatar.cc/150?img=45",
-                highlight: "animados como nunca"
-              },
-              {
-                text: "Vale muito mais do que custa. O material é extremamente bem feito, organizado e as crianças amaram o álbum da sala.",
-                author: "Patrícia Sousa",
-                role: "Pedagoga",
-                avatar: "https://i.pravatar.cc/150?img=44",
-                highlight: "vale muito mais do que custa"
-              },
-              {
-                text: "Nos dias de jogo foi a salvação! Imprimi na véspera e as crianças ficaram entretidas a tarde toda. Recomendo demais.",
-                author: "Mariana Costa",
-                role: "Mãe e coordenadora",
-                avatar: "https://i.pravatar.cc/150?img=49",
-                highlight: "a salvação nos dias de jogo"
-              },
-              {
-                text: "Usei na minha turma de reforço e foi incrível. As crianças pediram para levar para casa. Material de altíssima qualidade.",
-                author: "Fernanda Lima",
-                role: "Professora particular",
-                avatar: "https://i.pravatar.cc/150?img=43",
-                highlight: "pediram para levar para casa"
-              },
-              {
-                text: "Comprei o kit completo e não me arrependo. O mini craque personalizável foi o maior sucesso com os meus sobrinhos!",
-                author: "Vanessa Almeida",
-                role: "Tia e professora",
-                avatar: "https://i.pravatar.cc/150?img=41",
-                highlight: "maior sucesso"
+                avatar: "https://i.pravatar.cc/150?img=27",
               },
             ].map((d, i) => (
               <motion.div
@@ -527,35 +470,23 @@ function LandingPage() {
                 className="rounded-2xl p-6 border transition-all duration-200"
                 style={{ background: "#FFFFFF", borderColor: "#EFEFEF", boxShadow: "0 2px 16px rgba(0,0,0,0.06)" }}
               >
-                {/* Stars */}
                 <div className="flex gap-0.5 mb-4">
                   {[...Array(5)].map((_, j) => (
                     <Star key={j} className="w-4 h-4 fill-current" style={{ color: "#FFC72C" }} />
                   ))}
                 </div>
 
-                {/* Quote */}
                 <p className="text-base leading-relaxed mb-6" style={{ color: "#333333" }}>
                   "{d.text}"
                 </p>
 
-                {/* Author */}
                 <div className="flex items-center gap-3 pt-4 border-t" style={{ borderColor: "#F0F0F0" }}>
                   <img
                     src={d.avatar}
                     alt={d.author}
                     className="w-11 h-11 rounded-full object-cover border-2"
                     style={{ borderColor: "#E8E8E8" }}
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      target.nextElementSibling?.classList.remove('hidden');
-                    }}
                   />
-                  <div className="w-11 h-11 rounded-full items-center justify-center font-black text-white text-sm hidden"
-                    style={{ background: "#1FAF5A" }}>
-                    {d.author[0]}
-                  </div>
                   <div>
                     <p className="font-black text-sm" style={{ color: "#111111" }}>{d.author}</p>
                     <p className="text-xs" style={{ color: "#888888" }}>{d.role}</p>
@@ -579,7 +510,7 @@ function LandingPage() {
           >
             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl border" style={{ background: "#FAFAFA", borderColor: "#E8E8E8" }}>
               <div className="flex -space-x-2">
-                {["https://i.pravatar.cc/150?img=47","https://i.pravatar.cc/150?img=45","https://i.pravatar.cc/150?img=44"].map((src, i) => (
+                {["https://i.pravatar.cc/150?img=49","https://i.pravatar.cc/150?img=36","https://i.pravatar.cc/150?img=9"].map((src, i) => (
                   <img key={i} src={src} alt="" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
                 ))}
               </div>
