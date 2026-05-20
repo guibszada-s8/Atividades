@@ -40,66 +40,179 @@ function LandingPage() {
       <CountdownTimer />
 
       {/* 1. HERO SECTION */}
-      <section className="relative pt-20 pb-32 px-4 overflow-hidden bg-secondary text-secondary-foreground text-center">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1518605368461-1ee7a5342a5c?q=80&w=3000&auto=format&fit=crop')] bg-cover bg-center"></div>
-        <div className="max-w-4xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-block px-4 py-1 rounded-full bg-primary/20 text-primary font-bold text-sm mb-6 border border-primary/30">
-              LANÇAMENTO EXCLUSIVO
-            </span>
-            <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight font-display drop-shadow-md">
-              <span className="text-primary">⚽ O material da Copa</span> que as crianças NÃO querem largar
-            </h1>
-            <p className="text-xl md:text-2xl mb-10 text-white/90 max-w-3xl mx-auto font-medium">
-              Mais de 250 atividades prontas para imprimir que unem diversão, criatividade e aprendizado durante a Copa do Mundo.
-            </p>
-            
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block"
-            >
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground text-xl h-auto py-5 px-10 rounded-full font-bold shadow-xl shadow-primary/30 w-full md:w-auto uppercase tracking-wide border-b-4 border-primary-foreground/20 animate-pulse"
-                onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                data-testid="button-hero-cta"
+      <section className="relative overflow-hidden bg-white">
+        {/* Subtle background decoration */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.04]" style={{ background: "radial-gradient(circle, #1FAF5A 0%, transparent 70%)" }} />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-[0.03]" style={{ background: "radial-gradient(circle, #FFC72C 0%, transparent 70%)" }} />
+          {/* Faint soccer ball pattern */}
+          <svg className="absolute top-8 right-8 w-24 h-24 opacity-[0.06]" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="48" stroke="#1FAF5A" strokeWidth="2"/>
+            <polygon points="50,20 62,38 80,38 68,52 74,70 50,58 26,70 32,52 20,38 38,38" fill="#1FAF5A"/>
+          </svg>
+          <svg className="absolute bottom-16 left-12 w-16 h-16 opacity-[0.05]" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="48" stroke="#FFC72C" strokeWidth="2"/>
+            <polygon points="50,20 62,38 80,38 68,52 74,70 50,58 26,70 32,52 20,38 38,38" fill="#FFC72C"/>
+          </svg>
+        </div>
+
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+            {/* Left: Copy */}
+            <div className="flex-1 text-center lg:text-left">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55 }}
               >
-                QUERO GARANTIR AGORA
-              </Button>
-            </motion.div>
-            
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-8 text-sm font-semibold text-white/80">
-              <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-primary" /> Acesso imediato</div>
-              <div className="flex items-center gap-2"><Download className="w-5 h-5 text-primary" /> Arquivos em PDF</div>
-              <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-primary" /> Imprima quantas vezes quiser</div>
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-7 border" style={{ background: "#F0FDF6", color: "#1FAF5A", borderColor: "#A7F3C8" }}>
+                  ⚽ LANÇAMENTO EXCLUSIVO
+                </span>
+
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] mb-6 font-display" style={{ color: "#111111" }}>
+                  O material da{" "}
+                  <span style={{ color: "#1FAF5A" }}>Copa</span> que as{" "}
+                  <span style={{ color: "#1FAF5A" }}>crianças</span>{" "}
+                  <span style={{ color: "#FFC72C", WebkitTextStroke: "1px #e6aa00" }}>NÃO</span>{" "}
+                  querem largar
+                </h1>
+
+                <p className="text-lg md:text-xl mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed" style={{ color: "#444444" }}>
+                  Mais de <strong>250 atividades</strong> prontas para imprimir que unem{" "}
+                  <span style={{ color: "#1FAF5A", fontWeight: 700 }}>diversão</span>,
+                  criatividade e{" "}
+                  <span style={{ color: "#1FAF5A", fontWeight: 700 }}>aprendizado</span>{" "}
+                  durante a Copa do Mundo.
+                </p>
+
+                <motion.div
+                  whileHover={{ scale: 1.03, y: -2 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-block w-full md:w-auto"
+                >
+                  <button
+                    onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+                    data-testid="button-hero-cta"
+                    className="w-full md:w-auto text-lg md:text-xl font-black px-10 py-5 rounded-2xl uppercase tracking-wide transition-all duration-200"
+                    style={{
+                      background: "linear-gradient(135deg, #1FAF5A 0%, #17913F 100%)",
+                      color: "#ffffff",
+                      boxShadow: "0 6px 24px rgba(31,175,90,0.35), 0 2px 8px rgba(31,175,90,0.2)",
+                      border: "none"
+                    }}
+                  >
+                    QUERO GARANTIR AGORA →
+                  </button>
+                </motion.div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5 mt-8">
+                  {[
+                    { icon: CheckCircle2, label: "Acesso imediato" },
+                    { icon: Download, label: "Arquivos em PDF" },
+                    { icon: CheckCircle2, label: "Imprima à vontade" },
+                  ].map(({ icon: Icon, label }) => (
+                    <div key={label} className="flex items-center gap-2 text-sm font-semibold" style={{ color: "#555555" }}>
+                      <Icon className="w-4 h-4 shrink-0" style={{ color: "#1FAF5A" }} />
+                      {label}
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
 
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {[
-                { title: "Atividades Infantis", color: "bg-blue-500", icon: Star },
-                { title: "Álbum da Sala", color: "bg-green-500", icon: CheckCircle2 },
-                { title: "Mini Craque", color: "bg-yellow-500", icon: Zap },
-                { title: "Páginas para Colorir", color: "bg-pink-500", icon: Star },
-                { title: "Figurinhas", color: "bg-purple-500", icon: Zap },
-                { title: "Desafios", color: "bg-orange-500", icon: CheckCircle2 },
-              ].map((card, i) => (
+            {/* Right: Floating Mockup Cards */}
+            <div className="flex-1 w-full max-w-md lg:max-w-none relative">
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.15 }}
+                className="relative"
+              >
+                {/* Main card */}
+                <div className="rounded-3xl p-6 shadow-2xl border border-gray-100 mb-4" style={{ background: "#FFFFFF" }}>
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-lg font-black" style={{ background: "linear-gradient(135deg, #1FAF5A, #17913F)" }}>⚽</div>
+                    <div>
+                      <p className="font-black text-sm" style={{ color: "#111" }}>Kit Copa dos Craques</p>
+                      <p className="text-xs" style={{ color: "#888" }}>250+ atividades · PDF</p>
+                    </div>
+                    <span className="ml-auto text-xs font-bold px-2 py-1 rounded-full" style={{ background: "#F0FDF6", color: "#1FAF5A" }}>COMPLETO</span>
+                  </div>
+                  <div className="grid grid-cols-3 gap-3">
+                    {[
+                      { label: "Atividades Infantis", emoji: "🎨", bg: "#EFF6FF", color: "#3B82F6" },
+                      { label: "Álbum da Sala", emoji: "📒", bg: "#F0FDF6", color: "#1FAF5A" },
+                      { label: "Mini Craque", emoji: "🏆", bg: "#FFFBEB", color: "#F59E0B" },
+                      { label: "Para Colorir", emoji: "🖍️", bg: "#FDF2F8", color: "#EC4899" },
+                      { label: "Figurinhas", emoji: "⭐", bg: "#F5F3FF", color: "#8B5CF6" },
+                      { label: "Desafios", emoji: "🔥", bg: "#FFF7ED", color: "#F97316" },
+                    ].map((card, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 + i * 0.08 }}
+                        whileHover={{ y: -4, scale: 1.04 }}
+                        className="rounded-2xl p-3 flex flex-col items-center justify-center text-center cursor-default transition-all"
+                        style={{ background: card.bg, border: `1px solid ${card.color}22` }}
+                      >
+                        <span className="text-2xl mb-1">{card.emoji}</span>
+                        <span className="text-xs font-bold leading-tight" style={{ color: card.color }}>{card.label}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Floating badge — bottom left */}
                 <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 + i * 0.1 }}
-                  className={`${card.color} rounded-xl p-4 flex flex-col items-center justify-center text-white shadow-lg border border-white/20 aspect-square transform hover:-translate-y-2 transition-transform`}
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                  className="absolute -bottom-4 -left-4 rounded-2xl px-4 py-3 shadow-xl flex items-center gap-3 border border-gray-100"
+                  style={{ background: "#FFFFFF" }}
                 >
-                  <card.icon className="w-8 h-8 mb-2 opacity-80" />
-                  <span className="font-bold text-sm text-center leading-tight">{card.title}</span>
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "#FFFBEB" }}>
+                    <Star className="w-5 h-5" style={{ color: "#FFC72C" }} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-black" style={{ color: "#111" }}>+2.400 famílias</p>
+                    <p className="text-xs" style={{ color: "#888" }}>já garantiram o kit</p>
+                  </div>
                 </motion.div>
-              ))}
+
+                {/* Floating badge — top right */}
+                <motion.div
+                  animate={{ y: [0, 5, 0] }}
+                  transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut", delay: 0.5 }}
+                  className="absolute -top-4 -right-4 rounded-2xl px-4 py-3 shadow-xl flex items-center gap-2 border border-gray-100"
+                  style={{ background: "#FFFFFF" }}
+                >
+                  <Shield className="w-5 h-5" style={{ color: "#1FAF5A" }} />
+                  <p className="text-xs font-black" style={{ color: "#111" }}>Garantia 7 dias</p>
+                </motion.div>
+              </motion.div>
             </div>
+          </div>
+
+          {/* Social proof bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="mt-14 pt-8 border-t flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-12"
+            style={{ borderColor: "#F0F0F0" }}
+          >
+            {[
+              { value: "250+", label: "Atividades prontas" },
+              { value: "7 dias", label: "Garantia total" },
+              { value: "PDF", label: "Acesso imediato" },
+              { value: "∞", label: "Impressões ilimitadas" },
+            ].map(({ value, label }) => (
+              <div key={label} className="flex flex-col items-center gap-1">
+                <span className="text-2xl font-black font-display" style={{ color: "#1FAF5A" }}>{value}</span>
+                <span className="text-sm" style={{ color: "#777" }}>{label}</span>
+              </div>
+            ))}
           </motion.div>
         </div>
       </section>

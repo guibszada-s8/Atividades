@@ -1,0 +1,110 @@
+Altere completamente o HERO SECTION da landing page para um visual mais premium, limpo e moderno.
+
+════════════════════
+ALTERAÇÕES PRINCIPAIS
+════════════════════
+
+Remova o fundo verde da primeira seção
+O fundo principal agora deve ser BRANCO
+O visual deve ficar mais elegante, sofisticado e profissional
+O design deve lembrar páginas premium modernas de produtos digitais
+
+════════════════════
+PALETA DE CORES
+════════════════════
+
+Use:
+
+Fundo: branco (#FFFFFF)
+Texto principal: preto escuro (#111111)
+Destaques persuasivos: verde e amarelo
+Verde principal: #1FAF5A
+Amarelo destaque: #FFC72C
+
+════════════════════
+TIPOGRAFIA
+════════════════════
+
+Letras principais em preto
+Algumas palavras estratégicas devem ter destaque em:
+verde
+amarelo
+Use destaque visual forte nas palavras:
+“NÃO”
+“crianças”
+“diversão”
+“aprendizado”
+“Copa”
+
+Exemplo:
+“⚽ O material da Copa que as crianças NÃO querem largar”
+
+Deixar:
+
+“Copa” em verde
+“NÃO” em amarelo
+restante em preto
+
+════════════════════
+VISUAL DA HERO SECTION
+════════════════════
+
+Quero uma aparência:
+
+minimalista
+moderna
+premium
+limpa
+altamente profissional
+
+Adicionar:
+
+sombras suaves
+bastante espaçamento
+layout elegante
+mockups flutuando do lado direito
+elementos suaves de futebol no fundo com baixa opacidade
+gradientes MUITO discretos
+
+════════════════════
+BOTÕES
+════════════════════
+
+Botão CTA:
+
+verde vibrante
+hover moderno
+sombra leve
+aparência premium
+
+Texto:
+“QUERO GARANTIR AGORA”
+
+════════════════════
+ESTILO GERAL
+════════════════════
+
+A landing page deve parecer:
+
+mais cara
+mais confiável
+menos “infantil exagerado”
+mais parecida com páginas modernas de infoprodutos de alta conversão
+
+Quero um visual clean semelhante a:
+
+páginas premium da Hotmart
+landing pages minimalistas modernas
+design SaaS elegante misturado com elementos infantis leves
+
+════════════════════
+IMPORTANTE
+════════════════════
+
+NÃO deixar aparência poluída
+NÃO usar verde chapado forte no fundo
+Priorizar branco e contraste elegante
+Manter responsividade mobile perfeita
+Melhorar a hierarquia visual
+Dar mais destaque para headline e CTA
+A primeira dobra precisa parecer MUITO profissional e confiável para converter melhor.
