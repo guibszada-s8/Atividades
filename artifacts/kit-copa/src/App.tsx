@@ -433,7 +433,7 @@ function LandingPage() {
                 text: "Imprimi rapidinho e meus alunos amaram kkk. A sala ficou em silêncio total fazendo as atividades. Milagre!",
                 author: "Fernanda Alves",
                 role: "Professora, 1º ano",
-                avatar: "https://randomuser.me/api/portraits/women/65.jpg",
+                avatar: "https://randomuser.me/api/portraits/women/79.jpg",
               },
               {
                 text: "Meu filho ficou vidrado nas figurinhas 😂 Tive que imprimir mais duas vezes. Vale muito a pena!",
@@ -445,7 +445,7 @@ function LandingPage() {
                 text: "Usei na escolinha e foi sucesso total. Os pais ainda me perguntam onde consegui o material. Super indico!",
                 author: "Bruna Tavares",
                 role: "Pedagoga",
-                avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+                avatar: "https://randomuser.me/api/portraits/women/53.jpg",
               },
               {
                 text: "Pelo preço achei que seria simples, mas me surpreendeu MUITO. Material lindo, bem organizado e as crianças adoraram.",
