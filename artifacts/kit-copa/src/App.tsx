@@ -433,7 +433,7 @@ function LandingPage() {
                 text: "Imprimi rapidinho e meus alunos amaram kkk. A sala ficou em silêncio total fazendo as atividades. Milagre!",
                 author: "Fernanda Alves",
                 role: "Professora, 1º ano",
-                avatar: "https://i.pravatar.cc/150?img=36",
+                avatar: "https://randomuser.me/api/portraits/women/65.jpg",
               },
               {
                 text: "Meu filho ficou vidrado nas figurinhas 😂 Tive que imprimir mais duas vezes. Vale muito a pena!",
@@ -445,7 +445,7 @@ function LandingPage() {
                 text: "Usei na escolinha e foi sucesso total. Os pais ainda me perguntam onde consegui o material. Super indico!",
                 author: "Bruna Tavares",
                 role: "Pedagoga",
-                avatar: "https://i.pravatar.cc/150?img=20",
+                avatar: "https://randomuser.me/api/portraits/women/44.jpg",
               },
               {
                 text: "Pelo preço achei que seria simples, mas me surpreendeu MUITO. Material lindo, bem organizado e as crianças adoraram.",
@@ -457,7 +457,7 @@ function LandingPage() {
                 text: "Os alunos ficaram animados como nunca durante as aulas da Copa. A sala virou um estádio de entusiasmo! Vou usar todo ano.",
                 author: "Juliana Ferreira",
                 role: "Professora do 2º ano",
-                avatar: "https://i.pravatar.cc/150?img=27",
+                avatar: "https://randomuser.me/api/portraits/women/56.jpg",
               },
             ].map((d, i) => (
               <motion.div
