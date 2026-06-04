@@ -53,11 +53,6 @@ function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {/* Badge */}
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-5 border" style={{ background: "#F0FDF6", color: "#1FAF5A", borderColor: "#A7F3C8" }}>
-              ⚽ ATIVIDADES PRONTAS PARA IMPRIMIR
-            </span>
-
             {/* Headline — max 2 lines desktop */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-[1.1] mb-4 font-display" style={{ color: "#111111" }}>
               <span style={{ color: "#1FAF5A" }}>+200 Atividades</span> da{" "}
@@ -254,67 +249,96 @@ function LandingPage() {
             <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">Escolha o seu Kit</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-center">
-            {/* Card 1 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto items-start">
+            {/* Card 1 — Essencial */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-card text-card-foreground p-8 rounded-3xl shadow-xl border border-border"
+              className="rounded-2xl border p-6"
+              style={{ background: "#FFFFFF", borderColor: "#E5E7EB", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}
             >
-              <h3 className="text-2xl font-bold font-display text-muted-foreground mb-2">⚽ KIT ESSENCIAL</h3>
-              <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-xl font-bold">R$</span>
-                <span className="text-5xl font-black font-display text-foreground">9,90</span>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#9CA3AF" }}>⚽ KIT ESSENCIAL</p>
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="text-base font-bold" style={{ color: "#111" }}>R$</span>
+                <span className="text-4xl font-black font-display" style={{ color: "#111" }}>9,90</span>
               </div>
-              <ul className="space-y-4 mb-8">
-                {["250+ atividades", "PDFs prontos para imprimir", "Atualizações gratuitas", "Impressão ilimitada"].map((f, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-secondary" />
-                    <span className="font-medium text-foreground/80">{f}</span>
+              <p className="text-xs mb-4" style={{ color: "#9CA3AF" }}>pagamento único</p>
+              <ul className="space-y-2.5 mb-5">
+                {[
+                  "+100 atividades da Copa",
+                  "PDFs prontos para imprimir",
+                  "Atualizações gratuitas",
+                  "Impressão ilimitada",
+                ].map((f, i) => (
+                  <li key={i} className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: "#1FAF5A" }} />
+                    <span className="text-sm font-medium" style={{ color: "#374151" }}>{f}</span>
                   </li>
                 ))}
               </ul>
-              <Button 
-                variant="outline"
-                className="w-full text-lg h-auto py-4 rounded-xl font-bold border-2"
+              <button
+                className="w-full py-3 rounded-xl text-sm font-bold border-2 transition-all hover:bg-gray-50"
+                style={{ borderColor: "#D1D5DB", color: "#374151" }}
                 data-testid="button-buy-essential"
               >
                 QUERO O ESSENCIAL
-              </Button>
+              </button>
             </motion.div>
 
-            {/* Card 2 */}
+            {/* Card 2 — Completo (destaque) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-card text-card-foreground p-10 rounded-3xl shadow-2xl border-4 border-primary relative transform md:-translate-y-4"
+              className="rounded-2xl relative p-6"
+              style={{
+                background: "linear-gradient(160deg, #0f3d22 0%, #1a6b3a 100%)",
+                boxShadow: "0 12px 40px rgba(31,175,90,0.30), 0 4px 16px rgba(0,0,0,0.12)",
+                border: "1px solid rgba(255,255,255,0.12)"
+              }}
             >
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground font-black px-6 py-1.5 rounded-full text-sm uppercase tracking-wider whitespace-nowrap shadow-lg flex items-center gap-2">
+              {/* Badge */}
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider whitespace-nowrap"
+                style={{ background: "#FFC72C", color: "#111111", boxShadow: "0 2px 8px rgba(255,199,44,0.4)" }}>
                 🔥 Mais Escolhido
               </div>
-              <h3 className="text-2xl font-bold font-display text-accent mb-2">🏆 KIT COMPLETO COPA DOS CRAQUES</h3>
-              <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-xl font-bold text-foreground">R$</span>
-                <span className="text-6xl font-black font-display text-foreground">17,90</span>
+
+              <p className="text-xs font-bold uppercase tracking-widest mb-2 mt-1" style={{ color: "rgba(255,255,255,0.6)" }}>🏆 KIT COMPLETO</p>
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="text-base font-bold text-white">R$</span>
+                <span className="text-4xl font-black font-display text-white">19,90</span>
               </div>
-              <p className="font-bold text-sm text-secondary mb-4 uppercase">Tudo do Essencial + Extras Exclusivos:</p>
-              <ul className="space-y-4 mb-8">
-                {["Álbum da Copa da Sala", "Mini Craque Personalizável", "Modelo para figurinhas", "Certificado de mini craque", "Capas exclusivas", "Brindes extras surpresa"].map((f, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary" />
-                    <span className="font-bold text-foreground/90">{f}</span>
+              <p className="text-xs mb-4" style={{ color: "rgba(255,255,255,0.5)" }}>pagamento único · acesso imediato</p>
+
+              <p className="text-xs font-bold uppercase mb-3" style={{ color: "#4ADE80" }}>+200 atividades + extras exclusivos:</p>
+              <ul className="space-y-2.5 mb-5">
+                {[
+                  "+200 atividades da Copa",
+                  "Álbum da Copa da Sala",
+                  "Mini Craque Personalizável",
+                  "Certificados infantis",
+                  "Figurinhas e bônus",
+                  "Impressão ilimitada",
+                ].map((f, i) => (
+                  <li key={i} className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: "#4ADE80" }} />
+                    <span className="text-sm font-semibold text-white">{f}</span>
                   </li>
                 ))}
               </ul>
-              <Button 
-                className="w-full text-xl h-auto py-5 rounded-xl font-black bg-primary text-primary-foreground hover:bg-primary/90 shadow-xl shadow-primary/30 uppercase tracking-wide border-b-4 border-primary-foreground/20 animate-pulse"
+              <button
+                className="w-full py-3.5 rounded-xl text-sm font-black uppercase tracking-wide transition-all hover:opacity-90"
+                style={{
+                  background: "linear-gradient(135deg, #FFC72C, #F59E0B)",
+                  color: "#111111",
+                  boxShadow: "0 4px 16px rgba(255,199,44,0.4)"
+                }}
                 data-testid="button-buy-complete"
               >
-                QUERO O KIT COMPLETO
-              </Button>
+                QUERO O KIT COMPLETO →
+              </button>
             </motion.div>
           </div>
         </div>
