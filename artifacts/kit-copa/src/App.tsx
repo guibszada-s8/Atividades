@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -37,18 +37,6 @@ function CountdownTimer() {
 function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
-  const [showHint, setShowHint] = useState(true);
-  const hintTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const scheduleHide = useCallback(() => {
-    if (hintTimerRef.current) clearTimeout(hintTimerRef.current);
-    hintTimerRef.current = setTimeout(() => setShowHint(false), 3000);
-  }, []);
-
-  useEffect(() => {
-    scheduleHide();
-    return () => { if (hintTimerRef.current) clearTimeout(hintTimerRef.current); };
-  }, [scheduleHide]);
 
   const toggleMute = () => {
     const v = videoRef.current;
@@ -56,12 +44,7 @@ function HeroVideo() {
     const next = !v.muted;
     v.muted = next;
     setMuted(next);
-    setShowHint(true);
-    scheduleHide();
   };
-
-  const handleMouseEnter = () => { setShowHint(true); if (hintTimerRef.current) clearTimeout(hintTimerRef.current); };
-  const handleMouseLeave = () => scheduleHide();
 
   return (
     <div
@@ -74,8 +57,6 @@ function HeroVideo() {
         background: "#000",
       }}
       onClick={toggleMute}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
     >
       <video
         ref={videoRef}
@@ -89,22 +70,31 @@ function HeroVideo() {
         style={{ pointerEvents: "none" }}
       />
 
-      {/* Audio hint overlay */}
+      {/* Audio toggle button — visible only when muted */}
       <div
-        className="absolute inset-0 flex items-end justify-center pb-8 transition-opacity duration-500"
-        style={{ opacity: showHint ? 1 : 0, pointerEvents: "none" }}
+        className="absolute inset-0 flex items-center justify-center pointer-events-none"
+        style={{
+          opacity: muted ? 1 : 0,
+          transition: "opacity 0.35s ease",
+        }}
       >
         <div
-          className="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold"
+          className="flex flex-col items-center justify-center gap-2 rounded-2xl pointer-events-auto"
           style={{
-            background: "rgba(0,0,0,0.55)",
-            color: "#fff",
-            backdropFilter: "blur(8px)",
-            border: "1px solid rgba(255,255,255,0.15)",
-            letterSpacing: "0.02em"
+            width: 80,
+            height: 80,
+            background: "rgba(255,255,255,0.92)",
+            boxShadow: "0 8px 32px rgba(0,0,0,0.28), 0 2px 8px rgba(0,0,0,0.16)",
+            backdropFilter: "blur(6px)",
           }}
         >
-          {muted ? "🔇 Toque para ouvir" : "🔊 Áudio ativado"}
+          {/* Speaker icon */}
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+          <span style={{ fontSize: 10, fontWeight: 800, color: "#111", letterSpacing: "0.04em", lineHeight: 1 }}>LIGAR SOM</span>
         </div>
       </div>
     </div>
