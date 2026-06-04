@@ -1,0 +1,115 @@
+Quero substituir o vídeo atual da Hero Section pelo novo vídeo que vou enviar agora e alterar completamente o comportamento do player para maximizar retenção e conversão.
+
+SUBSTITUIÇÃO DO VÍDEO
+
+Remova o vídeo atual.
+
+Utilize o novo arquivo de vídeo que estou enviando neste projeto como vídeo principal da Hero Section.
+
+Configure automaticamente o player para utilizar esse novo vídeo.
+
+Mantenha o formato vertical (9:16).
+
+COMPORTAMENTO DO VÍDEO
+
+O vídeo deve:
+
+✅ iniciar automaticamente ao carregar a página
+
+✅ iniciar sem áudio (muted)
+
+✅ reproduzir continuamente
+
+✅ ficar em loop infinito
+
+✅ não pausar sozinho
+
+✅ continuar reproduzindo enquanto o usuário navega pela página
+
+ÁUDIO
+
+Quero que o usuário tenha apenas duas opções:
+
+assistir sem áudio
+ativar/desativar o áudio clicando no vídeo
+
+Funcionamento:
+
+vídeo inicia mutado
+ao clicar uma vez, ativa o áudio
+ao clicar novamente, desativa o áudio
+sem abrir menus
+sem exibir controles tradicionais
+INDICADOR DE ÁUDIO
+
+Enquanto estiver mutado:
+
+Exibir discretamente:
+
+🔇 Toque para ouvir
+
+ou
+
+🔊 Ative o áudio
+
+O aviso deve:
+
+ser elegante
+semi-transparente
+moderno
+desaparecer após alguns segundos
+reaparecer ao passar o mouse (desktop)
+reaparecer ao tocar novamente no vídeo (mobile)
+EXPERIÊNCIA MOBILE
+
+No celular:
+
+vídeo inicia automaticamente
+permanece reproduzindo
+não entra em tela cheia
+primeiro toque ativa o áudio
+segundo toque desativa o áudio
+REMOVER CONTROLES
+
+Não exibir:
+
+botão de play
+botão de pausa
+barra de progresso
+controles do navegador
+controles do YouTube
+qualquer elemento que distraia
+
+Quero um vídeo totalmente integrado ao design da landing page.
+
+DESIGN
+
+Manter:
+
+bordas arredondadas
+sombra suave
+aparência premium
+visual moderno
+
+O vídeo deve parecer parte do site e não um player externo.
+
+PERFORMANCE
+
+O vídeo deve:
+
+carregar rapidamente
+ser otimizado para celular
+não prejudicar a velocidade da página
+manter excelente experiência mobile
+RESULTADO FINAL
+
+Ao abrir a landing page:
+
+O novo vídeo enviado por mim já estará reproduzindo automaticamente.
+O vídeo começará sem som.
+O visitante verá um aviso discreto para ativar o áudio.
+Um clique ativa o áudio.
+Outro clique desativa o áudio.
+O vídeo continuará rodando em loop infinito.
+Nenhum controle tradicional será exibido.
+O vídeo ficará perfeitamente integrado à Hero Section para aumentar retenção e conversão.

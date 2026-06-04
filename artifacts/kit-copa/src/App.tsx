@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -34,6 +34,83 @@ function CountdownTimer() {
   );
 }
 
+function HeroVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+  const [showHint, setShowHint] = useState(true);
+  const hintTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const scheduleHide = useCallback(() => {
+    if (hintTimerRef.current) clearTimeout(hintTimerRef.current);
+    hintTimerRef.current = setTimeout(() => setShowHint(false), 3000);
+  }, []);
+
+  useEffect(() => {
+    scheduleHide();
+    return () => { if (hintTimerRef.current) clearTimeout(hintTimerRef.current); };
+  }, [scheduleHide]);
+
+  const toggleMute = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    const next = !v.muted;
+    v.muted = next;
+    setMuted(next);
+    setShowHint(true);
+    scheduleHide();
+  };
+
+  const handleMouseEnter = () => { setShowHint(true); if (hintTimerRef.current) clearTimeout(hintTimerRef.current); };
+  const handleMouseLeave = () => scheduleHide();
+
+  return (
+    <div
+      className="relative mx-auto mb-7 rounded-3xl overflow-hidden cursor-pointer select-none"
+      style={{
+        width: "min(100%, 280px)",
+        aspectRatio: "9/16",
+        boxShadow: "0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.10)",
+        border: "1px solid rgba(255,255,255,0.08)",
+        background: "#000",
+      }}
+      onClick={toggleMute}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <video
+        ref={videoRef}
+        src="/vsl.mov"
+        autoPlay
+        muted
+        loop
+        playsInline
+        disablePictureInPicture
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ pointerEvents: "none" }}
+      />
+
+      {/* Audio hint overlay */}
+      <div
+        className="absolute inset-0 flex items-end justify-center pb-8 transition-opacity duration-500"
+        style={{ opacity: showHint ? 1 : 0, pointerEvents: "none" }}
+      >
+        <div
+          className="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold"
+          style={{
+            background: "rgba(0,0,0,0.55)",
+            color: "#fff",
+            backdropFilter: "blur(8px)",
+            border: "1px solid rgba(255,255,255,0.15)",
+            letterSpacing: "0.02em"
+          }}
+        >
+          {muted ? "🔇 Toque para ouvir" : "🔊 Áudio ativado"}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function LandingPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans">
@@ -65,60 +142,13 @@ function LandingPage() {
             </p>
           </motion.div>
 
-          {/* Video placeholder — 9:16 vertical */}
+          {/* VSL Video — 9:16 vertical */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.15 }}
-            className="mx-auto mb-7"
-            style={{ width: "min(100%, 280px)" }}
           >
-            <div
-              className="relative w-full rounded-3xl overflow-hidden"
-              style={{
-                aspectRatio: "9/16",
-                background: "linear-gradient(160deg, #0D2818 0%, #1FAF5A22 50%, #0D2818 100%)",
-                boxShadow: "0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.10)",
-                border: "1px solid rgba(255,255,255,0.08)"
-              }}
-            >
-              {/* Phone notch */}
-              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-16 h-1.5 rounded-full" style={{ background: "rgba(0,0,0,0.35)" }} />
-
-              {/* Soccer ball watermark */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-[0.06]">
-                <svg viewBox="0 0 100 100" className="w-48 h-48" fill="none">
-                  <circle cx="50" cy="50" r="48" stroke="white" strokeWidth="2"/>
-                  <polygon points="50,20 62,38 80,38 68,52 74,70 50,58 26,70 32,52 20,38 38,38" fill="white"/>
-                </svg>
-              </div>
-
-              {/* Play button */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-                <motion.div
-                  whileHover={{ scale: 1.08 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-16 h-16 rounded-full flex items-center justify-center cursor-pointer"
-                  style={{
-                    background: "linear-gradient(135deg, #1FAF5A, #17913F)",
-                    boxShadow: "0 8px 30px rgba(31,175,90,0.5)"
-                  }}
-                >
-                  <Play className="w-7 h-7 text-white ml-1" fill="white" />
-                </motion.div>
-                <div className="text-center px-4">
-                  <p className="text-white font-bold text-sm opacity-90">Vídeo demonstrativo</p>
-                  <p className="text-white/50 text-xs mt-1">Veja o kit completo</p>
-                </div>
-              </div>
-
-              {/* Bottom label */}
-              <div className="absolute bottom-5 left-0 right-0 flex justify-center">
-                <span className="px-3 py-1 rounded-full text-xs font-bold" style={{ background: "rgba(31,175,90,0.25)", color: "#4ADE80", border: "1px solid rgba(31,175,90,0.3)" }}>
-                  ⚽ Kit Copa dos Craques
-                </span>
-              </div>
-            </div>
+            <HeroVideo />
           </motion.div>
 
           {/* CTA */}
