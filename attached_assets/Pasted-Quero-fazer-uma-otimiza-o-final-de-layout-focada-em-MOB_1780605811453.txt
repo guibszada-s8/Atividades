@@ -1,0 +1,116 @@
+Quero fazer uma otimização final de layout focada em MOBILE, deixando a landing page mais profissional, compacta e com melhor aproveitamento do espaço vertical.
+
+════════════════════
+
+BOTÃO "QUERO GARANTIR AGORA"
+════════════════════
+
+O botão logo abaixo do vídeo está ocupando altura demais.
+
+Quero:
+
+reduzir a altura do botão
+diminuir padding vertical
+manter largura responsiva
+manter aparência premium
+manter destaque visual
+manter excelente área de clique
+
+Objetivo:
+deixar o botão mais elegante e menos "gordo".
+
+Não reduzir drasticamente o tamanho da fonte.
+
+════════════════════
+2. SEÇÃO
+"FOI PENSANDO NISSO QUE CRIAMOS O KIT COPA DOS CRAQUES"
+════════════════════
+
+Atualmente essa área está ocupando muito espaço.
+
+Quero:
+
+reduzir margens superiores e inferiores
+diminuir espaçamento interno
+reduzir altura da caixa
+deixar visualmente mais compacta
+
+Trocar o texto atual por algo mais curto.
+
+Sugestão:
+
+"Por isso criamos o Kit Copa."
+
+ou
+
+"Criamos o Kit Copa para tornar o aprendizado mais divertido."
+
+Escolher a opção mais curta e elegante.
+
+Objetivo:
+reduzir espaço vertical sem perder contexto.
+
+════════════════════
+3. SEÇÃO
+"VEJA TUDO QUE VOCÊ RECEBE"
+════════════════════
+
+Alterar:
+
+❌ +250 atividades
+
+Para:
+
+✅ +200 atividades alinhadas à BNCC
+
+IMPORTANTE:
+
+NÃO criar um novo item
+NÃO aumentar o tamanho da seção
+Apenas substituir um dos itens existentes
+Manter exatamente a mesma quantidade de linhas
+
+Exemplo:
+
+✓ +200 atividades alinhadas à BNCC
+
+════════════════════
+4. OTIMIZAÇÕES FINAIS DE ESPAÇO
+════════════════════
+
+Fazer uma revisão geral da landing page para melhorar o aproveitamento vertical.
+
+Onde houver excesso de espaço:
+
+reduzir margens
+reduzir paddings
+aproximar seções
+reduzir espaços vazios
+
+Sem deixar o layout apertado.
+
+Objetivo:
+
+aparência mais profissional
+mais conteúdo acima da dobra
+melhor experiência mobile
+maior sensação de página premium
+
+════════════════════
+5. NÃO ALTERAR
+════════════════════
+
+Não alterar:
+
+cores
+identidade visual
+estrutura das ofertas
+depoimentos
+vídeos
+estilo dos cards
+
+Apenas otimizar espaço e compactação visual.
+
+RESULTADO ESPERADO:
+
+Uma landing page mais limpa, moderna, profissional e otimizada para celular, com menos rolagem necessária e melhor aproveitamento do espaço disponível.

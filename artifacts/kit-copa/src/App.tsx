@@ -132,7 +132,7 @@ function LandingPage() {
               whileTap={{ scale: 0.97 }}
               onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
               data-testid="button-hero-cta"
-              className="w-full sm:w-auto text-lg font-black px-10 py-5 rounded-2xl uppercase tracking-wide transition-all duration-200 mb-5"
+              className="w-full sm:w-auto text-lg font-black px-10 py-3.5 rounded-2xl uppercase tracking-wide transition-all duration-200 mb-4"
               style={{
                 background: "linear-gradient(135deg, #1FAF5A 0%, #17913F 100%)",
                 color: "#ffffff",
@@ -162,18 +162,18 @@ function LandingPage() {
       </section>
 
       {/* 2. DOR SECTION */}
-      <section className="py-20 px-4 bg-muted/30">
+      <section className="py-12 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-8"
           >
             <h2 className="text-3xl md:text-5xl font-black text-foreground mb-4 font-display">Você também passa por isso?</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
             {[
               "As crianças só querem celular",
               "Falta criatividade nas atividades",
@@ -187,12 +187,12 @@ function LandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-card p-6 rounded-2xl shadow-sm border border-border flex items-start gap-4"
+                className="bg-card p-4 rounded-2xl shadow-sm border border-border flex items-start gap-3"
               >
-                <div className="bg-destructive/10 p-3 rounded-full text-destructive shrink-0">
-                  <Info className="w-6 h-6" />
+                <div className="bg-destructive/10 p-2 rounded-full text-destructive shrink-0">
+                  <Info className="w-5 h-5" />
                 </div>
-                <p className="font-semibold text-lg text-card-foreground leading-snug">{pain}</p>
+                <p className="font-semibold text-base text-card-foreground leading-snug">{pain}</p>
               </motion.div>
             ))}
           </div>
@@ -201,24 +201,24 @@ function LandingPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-center bg-accent text-accent-foreground p-8 rounded-3xl shadow-lg border border-accent/20"
+            className="text-center bg-accent text-accent-foreground p-5 rounded-2xl shadow-lg border border-accent/20"
           >
-            <h3 className="text-2xl md:text-3xl font-bold font-display">Foi pensando nisso que criamos o Kit Copa dos Craques.</h3>
+            <h3 className="text-xl md:text-2xl font-bold font-display">Por isso criamos o Kit Copa.</h3>
           </motion.div>
         </div>
       </section>
 
       {/* 3. O QUE VEM NO KIT */}
-      <section className="py-24 px-4 bg-background">
+      <section className="py-14 px-4 bg-background">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-foreground mb-4 font-display">📦 Veja tudo que você recebe</h2>
-            <p className="text-xl text-muted-foreground">Um material completo para entreter e ensinar</p>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-5xl font-black text-foreground mb-3 font-display">📦 Veja tudo que você recebe</h2>
+            <p className="text-lg text-muted-foreground">Um material completo para entreter e ensinar</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-3xl mx-auto">
             {[
-              "250+ atividades da Copa prontas para imprimir",
+              "+200 atividades alinhadas à BNCC",
               "Álbum da Copa da Sala exclusivo",
               "Mini Craque personalizável infantil",
               "Jogos educativos e desafios divertidos",
@@ -242,11 +242,11 @@ function LandingPage() {
       </section>
 
       {/* 4. PRICING SECTION */}
-      <section id="pricing" className="py-24 px-4 bg-accent text-accent-foreground relative overflow-hidden">
+      <section id="pricing" className="py-14 px-4 bg-accent text-accent-foreground relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">Escolha o seu Kit</h2>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-5xl font-black mb-4 font-display">Escolha o seu Kit</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto items-start">
@@ -345,12 +345,12 @@ function LandingPage() {
       </section>
 
       {/* 5. BENEFÍCIOS */}
-      <section className="py-24 px-4 bg-muted/20">
+      <section className="py-14 px-4 bg-muted/20">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-5xl font-black text-foreground mb-4 font-display">Por que pais e professores estão amando?</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { t: "Menos tempo no celular", i: Zap },
               { t: "Aprendizado divertido", i: Star },
@@ -365,12 +365,12 @@ function LandingPage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="bg-card p-6 rounded-2xl border border-border shadow-sm flex flex-col items-center text-center gap-4 hover:border-primary/50 transition-colors"
+                className="bg-card p-4 rounded-2xl border border-border shadow-sm flex flex-col items-center text-center gap-3 hover:border-primary/50 transition-colors"
               >
-                <div className="bg-primary/10 p-4 rounded-full text-primary">
-                  <b.i className="w-8 h-8" />
+                <div className="bg-primary/10 p-3 rounded-full text-primary">
+                  <b.i className="w-6 h-6" />
                 </div>
-                <h4 className="font-bold text-lg">{b.t}</h4>
+                <h4 className="font-bold text-base">{b.t}</h4>
               </motion.div>
             ))}
           </div>
@@ -378,13 +378,13 @@ function LandingPage() {
       </section>
 
       {/* 6. DEPOIMENTOS */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-14 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="text-center mb-10"
           >
             <span className="inline-block px-4 py-1.5 rounded-full text-sm font-bold mb-4" style={{ background: "#FFFBEB", color: "#D97706" }}>
               ⭐ AVALIAÇÕES REAIS
@@ -511,9 +511,9 @@ function LandingPage() {
       </section>
 
       {/* 8. FAQ */}
-      <section className="py-24 px-4 bg-background">
+      <section className="py-14 px-4 bg-background">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-5xl font-black text-foreground font-display">Perguntas Frequentes</h2>
           </div>
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -536,12 +536,12 @@ function LandingPage() {
       </section>
 
       {/* 9. CTA FINAL */}
-      <section className="py-32 px-4 bg-accent text-accent-foreground text-center relative">
+      <section className="py-20 px-4 bg-accent text-accent-foreground text-center relative">
         <div className="max-w-4xl mx-auto relative z-10">
-          <h2 className="text-4xl md:text-6xl font-black mb-6 font-display">
+          <h2 className="text-4xl md:text-6xl font-black mb-4 font-display">
             <span className="text-primary">⚽ Transforme a paixão</span> pela Copa em diversão e aprendizado
           </h2>
-          <p className="text-2xl mb-12 text-white/90">Garanta agora o kit que as crianças NÃO querem largar.</p>
+          <p className="text-xl mb-8 text-white/90">Garanta agora o kit que as crianças NÃO querem largar.</p>
           
           <Button 
             size="lg" 
