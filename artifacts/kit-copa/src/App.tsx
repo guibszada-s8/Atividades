@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { motion } from "framer-motion";
-import { CheckCircle2, Shield, Star, Zap, Download, Clock, ChevronDown, Check, Info, Lock } from "lucide-react";
+import { CheckCircle2, Shield, Star, Zap, Download, Clock, ChevronDown, Check, Info, Lock, Play } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 
@@ -41,178 +41,127 @@ function LandingPage() {
 
       {/* 1. HERO SECTION */}
       <section className="relative overflow-hidden bg-white">
-        {/* Subtle background decoration */}
+        {/* Subtle bg decoration */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.04]" style={{ background: "radial-gradient(circle, #1FAF5A 0%, transparent 70%)" }} />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-[0.03]" style={{ background: "radial-gradient(circle, #FFC72C 0%, transparent 70%)" }} />
-          {/* Faint soccer ball pattern */}
-          <svg className="absolute top-8 right-8 w-24 h-24 opacity-[0.06]" viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="50" r="48" stroke="#1FAF5A" strokeWidth="2"/>
-            <polygon points="50,20 62,38 80,38 68,52 74,70 50,58 26,70 32,52 20,38 38,38" fill="#1FAF5A"/>
-          </svg>
-          <svg className="absolute bottom-16 left-12 w-16 h-16 opacity-[0.05]" viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="50" r="48" stroke="#FFC72C" strokeWidth="2"/>
-            <polygon points="50,20 62,38 80,38 68,52 74,70 50,58 26,70 32,52 20,38 38,38" fill="#FFC72C"/>
-          </svg>
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.04]" style={{ background: "radial-gradient(circle, #1FAF5A 0%, transparent 70%)" }} />
+          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full opacity-[0.03]" style={{ background: "radial-gradient(circle, #FFC72C 0%, transparent 70%)" }} />
         </div>
 
-        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+        <div className="max-w-2xl mx-auto px-5 pt-10 pb-8 md:pt-14 md:pb-10 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {/* Badge */}
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-5 border" style={{ background: "#F0FDF6", color: "#1FAF5A", borderColor: "#A7F3C8" }}>
+              ⚽ ATIVIDADES PRONTAS PARA IMPRIMIR
+            </span>
 
-            {/* Left: Copy */}
-            <div className="flex-1 text-center lg:text-left">
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55 }}
-              >
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-7 border" style={{ background: "#F0FDF6", color: "#1FAF5A", borderColor: "#A7F3C8" }}>
-                  ⚽ LANÇAMENTO EXCLUSIVO
+            {/* Headline — max 2 lines desktop */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-[1.1] mb-4 font-display" style={{ color: "#111111" }}>
+              <span style={{ color: "#1FAF5A" }}>+200 Atividades</span> da{" "}
+              <span style={{ color: "#FFC72C" }}>Copa</span> que as Crianças Não Querem Largar
+            </h1>
+
+            {/* Subheadline */}
+            <p className="text-base md:text-lg mb-6 leading-relaxed max-w-lg mx-auto" style={{ color: "#555555" }}>
+              Diversão, aprendizado e criatividade em um único kit — pronto para usar em casa ou na escola.
+            </p>
+          </motion.div>
+
+          {/* Video placeholder — 9:16 vertical */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.15 }}
+            className="mx-auto mb-7"
+            style={{ width: "min(100%, 280px)" }}
+          >
+            <div
+              className="relative w-full rounded-3xl overflow-hidden"
+              style={{
+                aspectRatio: "9/16",
+                background: "linear-gradient(160deg, #0D2818 0%, #1FAF5A22 50%, #0D2818 100%)",
+                boxShadow: "0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.10)",
+                border: "1px solid rgba(255,255,255,0.08)"
+              }}
+            >
+              {/* Phone notch */}
+              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-16 h-1.5 rounded-full" style={{ background: "rgba(0,0,0,0.35)" }} />
+
+              {/* Soccer ball watermark */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-[0.06]">
+                <svg viewBox="0 0 100 100" className="w-48 h-48" fill="none">
+                  <circle cx="50" cy="50" r="48" stroke="white" strokeWidth="2"/>
+                  <polygon points="50,20 62,38 80,38 68,52 74,70 50,58 26,70 32,52 20,38 38,38" fill="white"/>
+                </svg>
+              </div>
+
+              {/* Play button */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
+                <motion.div
+                  whileHover={{ scale: 1.08 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-16 h-16 rounded-full flex items-center justify-center cursor-pointer"
+                  style={{
+                    background: "linear-gradient(135deg, #1FAF5A, #17913F)",
+                    boxShadow: "0 8px 30px rgba(31,175,90,0.5)"
+                  }}
+                >
+                  <Play className="w-7 h-7 text-white ml-1" fill="white" />
+                </motion.div>
+                <div className="text-center px-4">
+                  <p className="text-white font-bold text-sm opacity-90">Vídeo demonstrativo</p>
+                  <p className="text-white/50 text-xs mt-1">Veja o kit completo</p>
+                </div>
+              </div>
+
+              {/* Bottom label */}
+              <div className="absolute bottom-5 left-0 right-0 flex justify-center">
+                <span className="px-3 py-1 rounded-full text-xs font-bold" style={{ background: "rgba(31,175,90,0.25)", color: "#4ADE80", border: "1px solid rgba(31,175,90,0.3)" }}>
+                  ⚽ Kit Copa dos Craques
                 </span>
-
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] mb-6 font-display" style={{ color: "#111111" }}>
-                  O material da{" "}
-                  <span style={{ color: "#1FAF5A" }}>Copa</span> que as{" "}
-                  <span style={{ color: "#1FAF5A" }}>crianças</span>{" "}
-                  <span style={{ color: "#FFC72C", WebkitTextStroke: "1px #e6aa00" }}>NÃO</span>{" "}
-                  querem largar
-                </h1>
-
-                <p className="text-lg md:text-xl mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed" style={{ color: "#444444" }}>
-                  Mais de <strong>250 atividades</strong> prontas para imprimir que unem{" "}
-                  <span style={{ color: "#1FAF5A", fontWeight: 700 }}>diversão</span>,
-                  criatividade e{" "}
-                  <span style={{ color: "#1FAF5A", fontWeight: 700 }}>aprendizado</span>{" "}
-                  durante a Copa do Mundo.
-                </p>
-
-                <motion.div
-                  whileHover={{ scale: 1.03, y: -2 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="inline-block w-full md:w-auto"
-                >
-                  <button
-                    onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                    data-testid="button-hero-cta"
-                    className="w-full md:w-auto text-lg md:text-xl font-black px-10 py-5 rounded-2xl uppercase tracking-wide transition-all duration-200"
-                    style={{
-                      background: "linear-gradient(135deg, #1FAF5A 0%, #17913F 100%)",
-                      color: "#ffffff",
-                      boxShadow: "0 6px 24px rgba(31,175,90,0.35), 0 2px 8px rgba(31,175,90,0.2)",
-                      border: "none"
-                    }}
-                  >
-                    QUERO GARANTIR AGORA →
-                  </button>
-                </motion.div>
-
-                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5 mt-8">
-                  {[
-                    { icon: CheckCircle2, label: "Acesso imediato" },
-                    { icon: Download, label: "Arquivos em PDF" },
-                    { icon: CheckCircle2, label: "Imprima à vontade" },
-                  ].map(({ icon: Icon, label }) => (
-                    <div key={label} className="flex items-center gap-2 text-sm font-semibold" style={{ color: "#555555" }}>
-                      <Icon className="w-4 h-4 shrink-0" style={{ color: "#1FAF5A" }} />
-                      {label}
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
+              </div>
             </div>
+          </motion.div>
 
-            {/* Right: Floating Mockup Cards */}
-            <div className="flex-1 w-full max-w-md lg:max-w-none relative">
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7, delay: 0.15 }}
-                className="relative"
-              >
-                {/* Main card */}
-                <div className="rounded-3xl p-6 shadow-2xl border border-gray-100 mb-4" style={{ background: "#FFFFFF" }}>
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-lg font-black" style={{ background: "linear-gradient(135deg, #1FAF5A, #17913F)" }}>⚽</div>
-                    <div>
-                      <p className="font-black text-sm" style={{ color: "#111" }}>Kit Copa dos Craques</p>
-                      <p className="text-xs" style={{ color: "#888" }}>250+ atividades · PDF</p>
-                    </div>
-                    <span className="ml-auto text-xs font-bold px-2 py-1 rounded-full" style={{ background: "#F0FDF6", color: "#1FAF5A" }}>COMPLETO</span>
-                  </div>
-                  <div className="grid grid-cols-3 gap-3">
-                    {[
-                      { label: "Atividades Infantis", emoji: "🎨", bg: "#EFF6FF", color: "#3B82F6" },
-                      { label: "Álbum da Sala", emoji: "📒", bg: "#F0FDF6", color: "#1FAF5A" },
-                      { label: "Mini Craque", emoji: "🏆", bg: "#FFFBEB", color: "#F59E0B" },
-                      { label: "Para Colorir", emoji: "🖍️", bg: "#FDF2F8", color: "#EC4899" },
-                      { label: "Figurinhas", emoji: "⭐", bg: "#F5F3FF", color: "#8B5CF6" },
-                      { label: "Desafios", emoji: "🔥", bg: "#FFF7ED", color: "#F97316" },
-                    ].map((card, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: 12 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 + i * 0.08 }}
-                        whileHover={{ y: -4, scale: 1.04 }}
-                        className="rounded-2xl p-3 flex flex-col items-center justify-center text-center cursor-default transition-all"
-                        style={{ background: card.bg, border: `1px solid ${card.color}22` }}
-                      >
-                        <span className="text-2xl mb-1">{card.emoji}</span>
-                        <span className="text-xs font-bold leading-tight" style={{ color: card.color }}>{card.label}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Floating badge — bottom left */}
-                <motion.div
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                  className="absolute -bottom-4 -left-4 rounded-2xl px-4 py-3 shadow-xl flex items-center gap-3 border border-gray-100"
-                  style={{ background: "#FFFFFF" }}
-                >
-                  <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "#FFFBEB" }}>
-                    <Star className="w-5 h-5" style={{ color: "#FFC72C" }} />
-                  </div>
-                  <div>
-                    <p className="text-xs font-black" style={{ color: "#111" }}>+2.400 famílias</p>
-                    <p className="text-xs" style={{ color: "#888" }}>já garantiram o kit</p>
-                  </div>
-                </motion.div>
-
-                {/* Floating badge — top right */}
-                <motion.div
-                  animate={{ y: [0, 5, 0] }}
-                  transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut", delay: 0.5 }}
-                  className="absolute -top-4 -right-4 rounded-2xl px-4 py-3 shadow-xl flex items-center gap-2 border border-gray-100"
-                  style={{ background: "#FFFFFF" }}
-                >
-                  <Shield className="w-5 h-5" style={{ color: "#1FAF5A" }} />
-                  <p className="text-xs font-black" style={{ color: "#111" }}>Garantia 7 dias</p>
-                </motion.div>
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Social proof bar */}
+          {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="mt-14 pt-8 border-t flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-12"
-            style={{ borderColor: "#F0F0F0" }}
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
-            {[
-              { value: "250+", label: "Atividades prontas" },
-              { value: "7 dias", label: "Garantia total" },
-              { value: "PDF", label: "Acesso imediato" },
-              { value: "∞", label: "Impressões ilimitadas" },
-            ].map(({ value, label }) => (
-              <div key={label} className="flex flex-col items-center gap-1">
-                <span className="text-2xl font-black font-display" style={{ color: "#1FAF5A" }}>{value}</span>
-                <span className="text-sm" style={{ color: "#777" }}>{label}</span>
-              </div>
-            ))}
+            <motion.button
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+              data-testid="button-hero-cta"
+              className="w-full sm:w-auto text-lg font-black px-10 py-5 rounded-2xl uppercase tracking-wide transition-all duration-200 mb-5"
+              style={{
+                background: "linear-gradient(135deg, #1FAF5A 0%, #17913F 100%)",
+                color: "#ffffff",
+                boxShadow: "0 6px 24px rgba(31,175,90,0.40), 0 2px 8px rgba(31,175,90,0.2)",
+                border: "none",
+                display: "inline-block"
+              }}
+            >
+              QUERO GARANTIR AGORA →
+            </motion.button>
+
+            {/* Trust badges */}
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {[
+                { icon: CheckCircle2, label: "Acesso imediato" },
+                { icon: Download, label: "PDF para imprimir" },
+                { icon: Shield, label: "Garantia 7 dias" },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-1.5 text-sm font-semibold" style={{ color: "#666" }}>
+                  <Icon className="w-4 h-4 shrink-0" style={{ color: "#1FAF5A" }} />
+                  {label}
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>

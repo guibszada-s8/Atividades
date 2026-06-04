@@ -1,0 +1,131 @@
+Quero otimizar a primeira dobra (Hero Section) para aumentar a conversão e reduzir o espaço vertical ocupado.
+
+OBJETIVO
+
+A primeira dobra está ocupando muitas linhas e empurrando elementos importantes para baixo.
+
+Quero que o visitante veja imediatamente:
+
+Headline
+Benefício principal
+Vídeo
+CTA
+
+sem precisar rolar muito a tela.
+
+HEADLINE
+
+Substituir a headline atual:
+
+"O material da Copa que as crianças NÃO querem largar"
+
+Por versões mais curtas e com maior percepção de valor.
+
+Teste a seguinte como principal:
+
+⚽ +200 Atividades da Copa que as Crianças Não Querem Largar
+
+ou
+
+⚽ +200 Atividades da Copa para Aprender Brincando
+
+ou
+
+⚽ O Kit com +200 Atividades da Copa que as Crianças Amam
+
+Escolha a que gerar melhor equilíbrio visual e conversão.
+
+FORMATAÇÃO DA HEADLINE
+
+Quero que a headline:
+
+ocupe no máximo 2 linhas no desktop
+ocupe poucas linhas no mobile
+tenha maior largura útil
+use melhor o espaço horizontal
+fique visualmente mais compacta
+
+Reduzir margens e quebras desnecessárias.
+
+Destacar:
+
+"+200 Atividades" em verde
+"Copa" em amarelo
+restante em preto
+SUBHEADLINE
+
+Texto atual:
+
+"Mais de 250 atividades prontas para imprimir que unem diversão, criatividade e aprendizado durante a Copa do Mundo."
+
+Está muito longo.
+
+Substituir por algo mais curto.
+
+Sugestões:
+
+Diversão, aprendizado e criatividade em um único kit.
+
+ou
+
+Pronto para imprimir e usar em casa ou na escola.
+
+ou
+
+Atividades prontas para entreter e ensinar.
+
+Escolha a opção com melhor impacto visual.
+
+ESPAÇO PARA VÍDEO
+
+Adicionar logo abaixo da headline/subheadline um espaço dedicado para vídeo.
+
+IMPORTANTE:
+
+vídeo em formato vertical (9:16)
+estilo TikTok/Reels
+centralizado
+responsivo
+preparado para eu substituir depois pelo arquivo real
+
+Criar um placeholder elegante com:
+
+bordas arredondadas
+sombra suave
+proporção exata de celular
+ícone de play central
+texto discreto:
+
+"Vídeo demonstrativo"
+
+HIERARQUIA DE CONVERSÃO
+
+A ordem da primeira dobra deve ser:
+
+Headline
+Subheadline
+Vídeo vertical
+CTA principal
+Selos de confiança
+MOBILE
+
+O vídeo deve aparecer SEMPRE acima do botão CTA no celular.
+
+Quero que, ao abrir a página no celular, o visitante veja praticamente:
+
+headline
+vídeo
+botão
+
+sem precisar rolar muito.
+
+RESULTADO ESPERADO
+
+Quero uma Hero Section:
+
+mais compacta
+mais moderna
+com maior percepção de valor
+destacando "+200 atividades"
+preparada para vídeo vertical de vendas
+visual semelhante às landing pages que mais convertem em produtos digitais.
