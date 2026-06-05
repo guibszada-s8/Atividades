@@ -302,6 +302,7 @@ function LandingPage() {
                 className="w-full py-3 rounded-xl text-sm font-bold border-2 transition-all hover:bg-gray-50"
                 style={{ borderColor: "#D1D5DB", color: "#374151" }}
                 data-testid="button-buy-essential"
+                onClick={() => { window.location.href = "https://pay.wiapy.com/MZac0cQeTb"; }}
               >
                 QUERO O ESSENCIAL
               </button>
@@ -365,6 +366,7 @@ function LandingPage() {
                     boxShadow: "0 4px 16px rgba(31,175,90,0.35)"
                   }}
                   data-testid="button-buy-complete"
+                  onClick={() => { window.location.href = "https://pay.wiapy.com/KdYHw9onFS"; }}
                 >
                   QUERO O KIT COMPLETO →
                 </button>
