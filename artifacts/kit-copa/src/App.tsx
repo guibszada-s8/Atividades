@@ -193,26 +193,27 @@ function LandingPage() {
             <h2 className="text-3xl md:text-5xl font-black text-foreground mb-4 font-display">Você também passa por isso?</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
             {[
               "As crianças só querem celular",
               "Falta criatividade nas atividades",
               "Os alunos perdem o interesse rápido",
               "Planejar atividades toma muito tempo",
-              "Difícil encontrar algo educativo e divertido"
+              "Difícil encontrar algo educativo e divertido",
+              "Falta de materiais alinhados à BNCC e fáceis de aplicar",
             ].map((pain, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-card p-4 rounded-2xl shadow-sm border border-border flex items-start gap-3"
+                transition={{ delay: i * 0.07 }}
+                className="bg-card p-3 rounded-xl shadow-sm border border-border flex items-start gap-2.5"
               >
-                <div className="bg-destructive/10 p-2 rounded-full text-destructive shrink-0">
-                  <Info className="w-5 h-5" />
+                <div className="bg-destructive/10 p-1.5 rounded-full text-destructive shrink-0">
+                  <Info className="w-4 h-4" />
                 </div>
-                <p className="font-semibold text-base text-card-foreground leading-snug">{pain}</p>
+                <p className="font-semibold text-sm text-card-foreground leading-snug">{pain}</p>
               </motion.div>
             ))}
           </div>
@@ -306,59 +307,68 @@ function LandingPage() {
               </button>
             </motion.div>
 
-            {/* Card 2 — Completo (destaque) */}
+            {/* Card 2 — Completo (destaque com borda gradiente Brasil) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="rounded-2xl relative p-6"
+              className="relative"
               style={{
-                background: "linear-gradient(160deg, #0f3d22 0%, #1a6b3a 100%)",
-                boxShadow: "0 12px 40px rgba(31,175,90,0.30), 0 4px 16px rgba(0,0,0,0.12)",
-                border: "1px solid rgba(255,255,255,0.12)"
+                borderRadius: 18,
+                padding: 2,
+                background: "linear-gradient(135deg, #1FAF5A 0%, #FFC72C 60%, #1FAF5A 100%)",
+                boxShadow: "0 0 28px rgba(31,175,90,0.18), 0 0 16px rgba(255,199,44,0.12), 0 8px 32px rgba(0,0,0,0.10)",
               }}
             >
               {/* Badge */}
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider whitespace-nowrap"
-                style={{ background: "#FFC72C", color: "#111111", boxShadow: "0 2px 8px rgba(255,199,44,0.4)" }}>
-                🔥 Mais Escolhido
-              </div>
-
-              <p className="text-xs font-bold uppercase tracking-widest mb-2 mt-1" style={{ color: "rgba(255,255,255,0.6)" }}>🏆 KIT COMPLETO</p>
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-base font-bold text-white">R$</span>
-                <span className="text-4xl font-black font-display text-white">19,90</span>
-              </div>
-              <p className="text-xs mb-4" style={{ color: "rgba(255,255,255,0.5)" }}>pagamento único · acesso imediato</p>
-
-              <p className="text-xs font-bold uppercase mb-3" style={{ color: "#4ADE80" }}>+200 atividades + extras exclusivos:</p>
-              <ul className="space-y-2.5 mb-5">
-                {[
-                  "+200 atividades da Copa",
-                  "Álbum da Copa da Sala",
-                  "Mini Craque Personalizável",
-                  "Certificados infantis",
-                  "Figurinhas e bônus",
-                  "Impressão ilimitada",
-                ].map((f, i) => (
-                  <li key={i} className="flex items-center gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: "#4ADE80" }} />
-                    <span className="text-sm font-semibold text-white">{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <button
-                className="w-full py-3.5 rounded-xl text-sm font-black uppercase tracking-wide transition-all hover:opacity-90"
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider whitespace-nowrap z-10"
                 style={{
                   background: "linear-gradient(135deg, #FFC72C, #F59E0B)",
                   color: "#111111",
-                  boxShadow: "0 4px 16px rgba(255,199,44,0.4)"
-                }}
-                data-testid="button-buy-complete"
-              >
-                QUERO O KIT COMPLETO →
-              </button>
+                  boxShadow: "0 2px 10px rgba(255,199,44,0.5)",
+                  letterSpacing: "0.06em"
+                }}>
+                ⭐ Mais Escolhido
+              </div>
+
+              {/* Inner white card */}
+              <div className="rounded-2xl p-6 relative" style={{ background: "#FFFFFF" }}>
+                <p className="text-xs font-bold uppercase tracking-widest mb-2 mt-1" style={{ color: "#1FAF5A" }}>🏆 KIT COMPLETO</p>
+                <div className="flex items-baseline gap-1 mb-1">
+                  <span className="text-base font-bold" style={{ color: "#111" }}>R$</span>
+                  <span className="text-4xl font-black font-display" style={{ color: "#111" }}>19,90</span>
+                </div>
+                <p className="text-xs mb-4" style={{ color: "#9CA3AF" }}>pagamento único · acesso imediato</p>
+
+                <p className="text-xs font-bold uppercase mb-3" style={{ color: "#1FAF5A" }}>+200 atividades + extras exclusivos:</p>
+                <ul className="space-y-2.5 mb-5">
+                  {[
+                    "+200 atividades da Copa",
+                    "Álbum da Copa da Sala",
+                    "Mini Craque Personalizável",
+                    "Certificados infantis",
+                    "Figurinhas e bônus",
+                    "Impressão ilimitada",
+                  ].map((f, i) => (
+                    <li key={i} className="flex items-center gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: "#1FAF5A" }} />
+                      <span className="text-sm font-semibold" style={{ color: "#1F2937" }}>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  className="w-full py-3.5 rounded-xl text-sm font-black uppercase tracking-wide transition-all hover:opacity-90"
+                  style={{
+                    background: "linear-gradient(135deg, #1FAF5A 0%, #17913F 100%)",
+                    color: "#ffffff",
+                    boxShadow: "0 4px 16px rgba(31,175,90,0.35)"
+                  }}
+                  data-testid="button-buy-complete"
+                >
+                  QUERO O KIT COMPLETO →
+                </button>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -370,7 +380,7 @@ function LandingPage() {
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-5xl font-black text-foreground mb-4 font-display">Por que pais e professores estão amando?</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {[
               { t: "Menos tempo no celular", i: Zap },
               { t: "Aprendizado divertido", i: Star },
@@ -378,19 +388,20 @@ function LandingPage() {
               { t: "Fácil de imprimir", i: Download },
               { t: "Ideal para escolas e casa", i: CheckCircle2 },
               { t: "Desenvolvimento criativo", i: Star },
-              { t: "Organização para professores", i: CheckCircle2 }
+              { t: "Organização para professores", i: CheckCircle2 },
+              { t: "Atividades alinhadas à BNCC", i: CheckCircle2 },
             ].map((b, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="bg-card p-4 rounded-2xl border border-border shadow-sm flex flex-col items-center text-center gap-3 hover:border-primary/50 transition-colors"
+                className="bg-card p-3 rounded-xl border border-border shadow-sm flex flex-col items-center text-center gap-2 hover:border-primary/50 transition-colors"
               >
-                <div className="bg-primary/10 p-3 rounded-full text-primary">
-                  <b.i className="w-6 h-6" />
+                <div className="bg-primary/10 p-2.5 rounded-full text-primary">
+                  <b.i className="w-5 h-5" />
                 </div>
-                <h4 className="font-bold text-base">{b.t}</h4>
+                <h4 className="font-bold text-sm leading-snug">{b.t}</h4>
               </motion.div>
             ))}
           </div>
@@ -556,16 +567,17 @@ function LandingPage() {
       </section>
 
       {/* 9. CTA FINAL */}
-      <section className="py-20 px-4 bg-accent text-accent-foreground text-center relative">
-        <div className="max-w-4xl mx-auto relative z-10">
-          <h2 className="text-4xl md:text-6xl font-black mb-4 font-display">
-            <span className="text-primary">⚽ Transforme a paixão</span> pela Copa em diversão e aprendizado
+      <section className="py-16 px-5 bg-accent text-accent-foreground text-center relative">
+        <div className="max-w-2xl mx-auto relative z-10">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-4 font-display leading-tight break-words">
+            <span className="text-primary">⚽ Transforme a paixão</span>{" "}
+            <span className="block sm:inline">pela Copa em diversão e aprendizado</span>
           </h2>
-          <p className="text-xl mb-8 text-white/90">Garanta agora o kit que as crianças NÃO querem largar.</p>
-          
-          <Button 
-            size="lg" 
-            className="bg-primary hover:bg-primary/90 text-primary-foreground text-2xl h-auto py-6 px-12 rounded-full font-black shadow-2xl shadow-primary/40 uppercase tracking-wide border-b-4 border-primary-foreground/20 animate-pulse w-full md:w-auto"
+          <p className="text-base sm:text-xl mb-8 text-white/90">Garanta agora o kit que as crianças NÃO querem largar.</p>
+
+          <Button
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg sm:text-2xl h-auto py-4 sm:py-6 px-8 sm:px-12 rounded-full font-black shadow-2xl shadow-primary/40 uppercase tracking-wide border-b-4 border-primary-foreground/20 animate-pulse w-full sm:w-auto"
             onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
             data-testid="button-final-cta"
           >

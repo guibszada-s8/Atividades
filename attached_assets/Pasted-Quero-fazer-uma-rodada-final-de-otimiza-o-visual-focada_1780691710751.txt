@@ -1,0 +1,152 @@
+Quero fazer uma rodada final de otimização visual focada principalmente no MOBILE para melhorar conversão, proporção visual e aproveitamento de espaço.
+
+════════════════════
+
+SEÇÃO "VOCÊ TAMBÉM PASSA POR ISSO?"
+════════════════════
+
+Adicionar mais uma dor relacionada à BNCC.
+
+Adicionar um card como:
+
+📚 Dificuldade em encontrar atividades alinhadas à BNCC
+
+ou
+
+📖 Falta de materiais alinhados à BNCC e fáceis de aplicar
+
+Escolha a opção que ficar melhor visualmente.
+
+Além disso:
+
+A seção está ocupando espaço vertical demais no celular.
+
+Quero:
+
+reduzir altura dos cards
+reduzir padding interno
+reduzir espaçamento entre cards
+diminuir margens superiores e inferiores
+manter ótima legibilidade
+
+Objetivo:
+
+A seção deve parecer mais compacta e profissional.
+
+════════════════════
+2. SEÇÃO
+"POR QUE PAIS E PROFESSORES ESTÃO AMANDO?"
+════════════════════
+
+Atualmente existem 7 cards e a proporção está estranha.
+
+Quero uma das duas soluções:
+
+OPÇÃO A (preferencial)
+
+Adicionar mais 1 benefício para totalizar 8 cards.
+
+Sugestão:
+
+✓ Atividades alinhadas à BNCC
+
+ou
+
+✓ Mais praticidade no dia a dia
+
+OPÇÃO B
+
+Caso o layout fique melhor:
+
+Remover 2 cards e reorganizar em uma grade perfeitamente simétrica.
+
+Escolha a alternativa que gerar melhor resultado visual.
+
+Além disso:
+
+Esta seção está muito alta no celular.
+
+Quero:
+
+cards mais compactos
+menos padding
+menos margens
+menor distância entre linhas
+
+Sem perder a aparência premium.
+
+════════════════════
+3. CTA FINAL
+"QUERO ACESSO IMEDIATO"
+════════════════════
+
+No celular o texto está ultrapassando a largura da tela.
+
+Corrigir completamente.
+
+Garantir que:
+
+o texto nunca ultrapasse a tela
+haja quebra de linha inteligente
+fontes responsivas
+alinhamento perfeito
+
+Testar especificamente para telas pequenas.
+
+════════════════════
+4. CARD DO KIT COMPLETO
+════════════════════
+
+Quero testar uma nova versão visual.
+
+MANTER:
+
+fundo branco
+identidade premium
+estilo clean
+
+REMOVER:
+
+fundo colorido sólido
+excesso de destaque artificial
+
+NOVO DESTAQUE
+
+Manter o card branco, porém adicionar efeitos elegantes inspirados nas cores do Brasil.
+
+Exemplos:
+
+borda com gradiente verde e amarelo
+glow muito suave verde/amarelo
+selo "Mais Escolhido" mais premium
+pequenos detalhes visuais em verde e amarelo
+sombra mais refinada
+
+Objetivo:
+
+Destacar o Kit Completo sem parecer agressivo ou amador.
+
+Quero um visual parecido com:
+
+páginas premium da Hotmart
+produtos digitais de ticket baixo que convertem bem
+design moderno e sofisticado
+
+════════════════════
+5. OTIMIZAÇÃO GERAL MOBILE
+════════════════════
+
+Faça uma revisão completa da página procurando:
+
+excesso de espaço vertical
+margens exageradas
+paddings desnecessários
+elementos muito altos
+
+Reduza tudo de forma equilibrada.
+
+Objetivo:
+
+Mostrar mais conteúdo por tela sem deixar a página apertada.
+
+A landing page deve parecer mais profissional, moderna, compacta e otimizada para conversão em dispositivos móveis.
