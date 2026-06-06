@@ -338,7 +338,7 @@ function LandingPage() {
                 <p className="text-xs font-bold uppercase tracking-widest mb-2 mt-1" style={{ color: "#1FAF5A" }}>🏆 KIT COMPLETO</p>
                 <div className="flex items-baseline gap-1 mb-1">
                   <span className="text-base font-bold" style={{ color: "#111" }}>R$</span>
-                  <span className="text-4xl font-black font-display" style={{ color: "#111" }}>19,90</span>
+                  <span className="text-4xl font-black font-display" style={{ color: "#111" }}>17,90</span>
                 </div>
                 <p className="text-xs mb-4" style={{ color: "#9CA3AF" }}>pagamento único · acesso imediato</p>
 
