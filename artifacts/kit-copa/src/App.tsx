@@ -304,7 +304,7 @@ function LandingPage() {
                 data-testid="button-buy-essential"
                 onClick={() => { window.location.href = "https://pay.wiapy.com/MZac0cQeTb"; }}
               >
-                QUERO O ESSENCIAL
+                COMPRAR AGORA
               </button>
             </motion.div>
 
@@ -368,7 +368,7 @@ function LandingPage() {
                   data-testid="button-buy-complete"
                   onClick={() => { window.location.href = "https://pay.wiapy.com/KdYHw9onFS"; }}
                 >
-                  QUERO O KIT COMPLETO →
+                  COMPRAR AGORA
                 </button>
               </div>
             </motion.div>
