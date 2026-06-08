@@ -101,9 +101,60 @@ function HeroVideo() {
   );
 }
 
+const NAMES = ["Ana","Maria","Juliana","Fernanda","Camila","Beatriz","Larissa","Gabriela","Amanda","Isabela","Vitória","Letícia","Bianca","Rafaela","Bruna"];
+
+function SocialProofPopup() {
+  const [visible, setVisible] = useState(false);
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    const show = () => {
+      setName(NAMES[Math.floor(Math.random() * NAMES.length)]);
+      setVisible(true);
+      setTimeout(() => setVisible(false), 5000);
+    };
+
+    const schedule = () => {
+      const delay = 15000 + Math.random() * 15000;
+      return setTimeout(() => { show(); setTimeout(schedule, 1000); }, delay);
+    };
+
+    const initial = setTimeout(() => { show(); }, 4000);
+    const recurring = setTimeout(schedule, 9000);
+
+    return () => { clearTimeout(initial); clearTimeout(recurring); };
+  }, []);
+
+  return (
+    <div
+      className="fixed bottom-5 left-4 z-50 max-w-[280px] transition-all duration-500"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(16px)",
+        pointerEvents: visible ? "auto" : "none",
+      }}
+    >
+      <div className="flex items-center gap-3 bg-white rounded-2xl px-4 py-3"
+        style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.06)", border: "1px solid #F0FDF4" }}>
+        <div className="shrink-0 w-9 h-9 rounded-full flex items-center justify-center"
+          style={{ background: "#F0FDF4" }}>
+          <CheckCircle2 className="w-5 h-5" style={{ color: "#1FAF5A" }} />
+        </div>
+        <div>
+          <p className="text-xs font-black leading-tight" style={{ color: "#111" }}>
+            {name} adquiriu o Kit Completo agora mesmo! 🎉
+          </p>
+          <p className="text-[10px] mt-0.5 font-medium" style={{ color: "#9CA3AF" }}>Compra confirmada</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function LandingPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans">
+      <SocialProofPopup />
       <CountdownTimer />
 
       {/* 1. HERO SECTION */}
